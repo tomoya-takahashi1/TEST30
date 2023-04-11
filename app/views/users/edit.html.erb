@@ -1,5 +1,4 @@
-<h1>Users/edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
 <header>        
 <%= render "shared/header" %>
 </header>
@@ -9,7 +8,7 @@
   <%= form_for @user do |f| %>
     <div class = "col-12">
       <%= f.label :profile_image_id,"アイコン画像",class: "form-label"%>
-      <%= f.file_field :profile_image_id , class:"form-control "%>
+      <%= f.file_field :profile_image_id , class:"form-control" %>
     </div>
     <div class = "col-12">
       <%= f.label :name,"名前" ,class: "form-label"%>

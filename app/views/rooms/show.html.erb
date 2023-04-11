@@ -49,7 +49,7 @@
     </tr> 
     <th>
       <%= f.label :numberpeople,"人数",class: "form-label"%>
-      <%= f.number_field :numberpeople ,min: 1, class:"form-control"%>
+      <%= f.select :numberpeople, 1..100 %>
     </th>
       
   </table>

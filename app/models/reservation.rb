@@ -3,15 +3,13 @@ class Reservation < ApplicationRecord
 
     validates :checkout,presence: true
 
-    validates :numberpeople, presence: true
-
-   
+    
 
     belongs_to :room
     belongs_to :user
 
     
-
+    validates :numberpeople, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
 
       

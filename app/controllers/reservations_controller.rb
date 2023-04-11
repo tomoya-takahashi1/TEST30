@@ -21,7 +21,7 @@
           @room = Room.find(params[:id])
           @reservation = Reservation.new(reservation_params)
           @reservation = Reservation.new(params.require(:reservation).permit(:checkin,:checkout,:user_id,:room_id,:numberpeople))
-          if @reservation.checkin < Date.today
+          if  @reservation.checkin < Date.today
             @reservation.errors.add(:checkin, "は今日以降の日付にしてください")
             render "/rooms/show"
           elsif

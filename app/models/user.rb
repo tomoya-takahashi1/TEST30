@@ -8,5 +8,7 @@ class User < ApplicationRecord
          attachment :profile_image
          mount_uploader :profile_image_id, ImageUploader
          validates :name, presence: true
+
+         
 end
 
