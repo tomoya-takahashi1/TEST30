@@ -1,0 +1,46 @@
+<header>        
+<%= render "shared/header" %>
+</header>
+
+
+<div class = "container w-auto">
+  <div class="page-title">
+    <h4>予約済み一覧</h4>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>施設名</th>
+        <th>紹介文</th>
+        <th>合計金額</th>
+        <th>チェックイン日</th>
+        <th>チェックアウト日</th>
+        <th>人数</th>
+        <th>予約確定日時</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+    <% @reservations.each do |reservation| %>
+      
+      <tr>
+      <td class="w-25"><%= image_tag reservation.room.image.blank? ? 'default-image.png' : reservation.room.image.url ,class: "w-100"%></td>
+        <td><%= reservation.room.name%></td>
+        <td><%= reservation.room.introduction%></td>
+        <td><%= reservation.cost %></td>
+        <td><%= reservation.checkin %></td>
+        <td><%= reservation.checkout %></td>
+        <td><%= reservation.numberpeople %></td>
+        <td><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+      </tr>
+    </tr>
+    <% end %>
+   
+</tbody>
+</table>
+
+</div>
+
+
+ 
